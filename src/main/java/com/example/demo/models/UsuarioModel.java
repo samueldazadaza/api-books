@@ -3,48 +3,84 @@ package com.example.demo.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "book")
+@Table(name = "books")
 public class UsuarioModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id;
+    private Long id_libro;
 
-    private String nombre;
-    private String email;
-    private Integer prioridad;
+    private String titulo;
+    private String autor;
+    private String genero;
+    private String fecha_publicacion;
+    private String editorial;
+    private Integer cantidad;
+    private Integer precio;
 
-    public void setPrioridad(Integer prioridad) {
-        this.prioridad = prioridad;
+    public Long getId_libro() {
+        return id_libro;
     }
 
-    public Integer getPrioridad() {
-        return prioridad;
+    public void setId_libro(Long id_libro) {
+        this.id_libro = id_libro;
     }
 
-    public Long getId() {
-        return id;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getAutor() {
+        return autor;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setAutor(String autor) {
+        this.autor = autor;
     }
 
-    public String getEmail() {
-        return email;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getFecha_publicacion() {
+        return fecha_publicacion;
+    }
+
+    public void setFecha_publicacion(String fecha_publicacion) {
+        this.fecha_publicacion = fecha_publicacion;
+    }
+
+    public String getEditorial() {
+        return editorial;
+    }
+
+    public void setEditorial(String editorial) {
+        this.editorial = editorial;
+    }
+
+    public Integer getCantidad() {
+        return cantidad;
+    }
+
+    public void setCantidad(Integer cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public Integer getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Integer precio) {
+        this.precio = precio;
     }
 
 }

@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/book")
+@RequestMapping("/books")
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
@@ -26,22 +26,22 @@ public class UsuarioController {
     }
 
     @GetMapping(path = "/{id}")
-    public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id) {
-        return this.usuarioService.obtenerPorId(id);
+    public Optional<UsuarioModel> obtenerUsuarioPorId(@PathVariable("id") Long id_libro) {
+        return this.usuarioService.obtenerPorId(id_libro);
     }
 
     @GetMapping("/query")
-    public ArrayList<UsuarioModel> obtenerUsuarioPorPrioridad(@RequestParam("prioridad") Integer prioridad) {
-        return this.usuarioService.obtenerPorPrioridad(prioridad);
+    public ArrayList<UsuarioModel> obtenerUsuarioPorGenero(@RequestParam("genero") String genero) {
+        return this.usuarioService.obtenerPorGenero(genero);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String eliminarPorId(@PathVariable("id") Long id) {
-        boolean ok = this.usuarioService.eliminarUsuario(id);
+    public String eliminarPorId(@PathVariable("id") Long id_libro) {
+        boolean ok = this.usuarioService.eliminarUsuario(id_libro);
         if (ok) {
-            return "Se eliminó el usuario con id " + id;
+            return "Se eliminó el libro con id " + id_libro;
         } else {
-            return "No pudo eliminar el usuario con id" + id;
+            return "No pudo eliminar el libro con id" + id_libro;
         }
     }
 
