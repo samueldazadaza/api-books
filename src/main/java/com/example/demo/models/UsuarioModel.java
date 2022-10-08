@@ -1,86 +1,65 @@
 package com.example.demo.models;
 
-import javax.persistence.*;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "books")
-public class UsuarioModel {
+@Table(name="usuario")
 
+public class UsuarioModel {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(unique = true, nullable = false)
-    private Long id_libro;
+    private Long id_usuario;
 
-    private String titulo;
-    private String autor;
-    private String genero;
-    private String fecha_publicacion;
-    private String editorial;
-    private Integer cantidad;
-    private Integer precio;
+    private String nombre;
+    private String apellido;
+    private String contrasena;
+    private String email;
 
-    public Long getId_libro() {
-        return id_libro;
+    public Long getId() {
+        return id_usuario;
     }
 
-    public void setId_libro(Long id_libro) {
-        this.id_libro = id_libro;
+    public void setId(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
-    public String getTitulo() {
-        return titulo;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getAutor() {
-        return autor;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setAutor(String autor) {
-        this.autor = autor;
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
     }
 
-    public String getGenero() {
-        return genero;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
-    public String getFecha_publicacion() {
-        return fecha_publicacion;
+    public String getEmail() {
+        return email;
     }
 
-    public void setFecha_publicacion(String fecha_publicacion) {
-        this.fecha_publicacion = fecha_publicacion;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public Integer getCantidad() {
-        return cantidad;
-    }
-
-    public void setCantidad(Integer cantidad) {
-        this.cantidad = cantidad;
-    }
-
-    public Integer getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Integer precio) {
-        this.precio = precio;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
 }
